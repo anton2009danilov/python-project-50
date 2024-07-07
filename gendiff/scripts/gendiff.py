@@ -18,9 +18,13 @@ def main():
         type=str,
         nargs=1,
     )
-    parser.add_argument('--sum', dest='accumulate', action='store_const',
-                        const=sum, default=max,
-                        help='sum the integers (default: find the max)')
+    parser.add_argument('-f', '--format',
+                        dest='format',
+                        metavar='FORMAT',
+                        default='plain',
+                        type=str,
+                        nargs=1,
+                        help='set format of output')
     args = parser.parse_args()
     print(args.file_path_1)
     print(args.file_path_2)
